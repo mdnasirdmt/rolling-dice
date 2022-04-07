@@ -1,0 +1,33 @@
+#winner{
+    border: 1px solid black;
+    width: 100px ;
+    height: 100px;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+#member-1{
+    border: 1px solid black;
+    width: 100px ;
+    height: 100px;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+#member-2{
+    border: 1px solid black;
+    width: 100px ;
+    height: 100px;
+    text-align: center;
+    padding: 5px;
+}
+
+#member-3{
+    border: 1px solid black;
+    width: 100px ;
+    height: 100px;
+    text-align: center;
+    padding: 5px;
+}

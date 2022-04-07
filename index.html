@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div id="winner" ><p></p></div>
+    <div id="member-1" ></div>
+    <div id="member-2" ></div>
+    <div id="member-3" ></div>
+    <button id="roll" >ROLL THE DICE</button>
+    
+</body>
+</html>
+
+<script>
+
+        document.querySelector('#roll').addEventListener('click', randomeNumber)
+        var div1;
+        var div2;
+        var div3;
+        function randomeNumber(){
+            // alert('hi')
+            mem1= member_1()
+            mem2= member_2()
+            mem3= member_3()
+        
+            // mem1= document.querySelector('#member-1').innerHTML=Math.ceil(Math.random() * 6);
+            // mem2= document.querySelector('#member-2').innerHTML=Math.ceil(Math.random() * 6)
+            // mem3= document.querySelector('#member-3').innerHTML=Math.ceil(Math.random() * 6)
+            // console.log(div1,div2,div3)
+
+            min=Math.min(mem1,mem2,mem3)
+            max=Math.max(mem1,mem2,mem3)
+            // console.log(max,min)
+
+            document.querySelector("#member-1").style.backgroundColor="white"
+            document.querySelector("#member-2").style.backgroundColor="white"
+            document.querySelector("#member-3").style.backgroundColor=""
+            document.querySelector("#member-1").style.color="black"
+            document.querySelector("#member-2").style.color="black"
+            document.querySelector("#member-3").style.color="black"
+
+            if((mem1==max && mem2==max && mem3==max)  || (mem1==max && mem2==max) || (mem1==max && mem3==max) || (mem2==max && mem3==max))
+            {
+                document.querySelector('#winner').innerText='Roll Again !'
+                document.querySelector('#member-1').style.backgroundColor='blue';
+                document.querySelector('#member-2').style.backgroundColor='blue';
+                document.querySelector('#member-3').style.backgroundColor='blue';
+                document.querySelector('#member-1').style.color='white';
+                document.querySelector('#member-2').style.color='white';
+                document.querySelector('#member-3').style.color='white';
+
+                if(mem1==min){
+                    document.querySelector("#member-1").style.backgroundColor="red"
+                }
+                else if(mem2==min)
+                {
+                    document.querySelector("#member-2").style.backgroundColor="red"
+                }
+                else if(mem3==min)
+                {
+                    document.querySelector("#member-3").style.backgroundColor="red"
+                }
+            }
+
+                else if(mem1==max && mem2==min || mem1==max && mem3==min)
+                {
+                    document.querySelector("#winner").innerText="Winner Green"
+                    document.querySelector("#member-1").style.backgroundColor="green"
+                    document.querySelector("#member-1").style.color="white"
+
+                }
+
+                else if(mem2==max && mem1==min || mem2==max && mem3==min)
+                {
+                    document.querySelector("#winner").innerText="Winner Green"
+                    document.querySelector("#member-2").style.backgroundColor="green"
+                    document.querySelector("#member-2").style.color="white"
+
+                }
+
+                else if(mem3==max && mem1==min || mem3==max && mem2==min)
+                {
+                    document.querySelector("#winner").innerText="Winner Green"
+                    document.querySelector("#member-3").style.backgroundColor="green"
+                    document.querySelector("#member-3").style.color="white"
+
+                }
+
+
+            
+            
+        }
+
+        function member_1(){
+            // alert('mem1')
+            function getRandomInt(max) {
+
+            return Math.ceil(Math.random() * max);
+            }
+
+           return document.querySelector('#member-1').innerHTML=getRandomInt(6);
+        //    console.log(div1)
+
+
+        }
+
+        function member_2(){
+            // alert('mem2')
+            function getRandomInt(max) {
+
+            return Math.ceil(Math.random() * max);
+            }
+
+           return document.querySelector('#member-2').innerHTML=getRandomInt(6)
+        //    console.log(div2)
+        }
+
+        function member_3(){
+            // alert('mem3')
+            function getRandomInt(max) {
+
+            return Math.ceil(Math.random() * max);
+            }
+
+           return document.querySelector('#member-3').innerHTML=getRandomInt(6)
+        //    console.log(div3)
+                        
+        }
+
+
+// console.log(div1,div2,div3)
+    
+        
+
+</script>
